@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+
+
+* {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  /*Navbar*/
+.topnavbar {
+  margin-bottom: 20px;
+    padding:1%;
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    align-items: center;
+    background-color: rgb(67,166,255);
+  }
+
+.topnavbar h1 {
+    color:#FFFFFF;
+    font-size: 2em;
+  }
+
+.topnavbar .links {
+    margin-left: auto;
+  }
+
+.topnavbar .links .link{
+    margin-left: 2.3em;
+    text-decoration: none;
+    padding: 0.7em;
+    color: #FFFFFF;
+  }
+
+  .navbar .nav-link.link {
+    transition: 0.3s ease;
+    border-top: 0.18em solid transparent;
+    border-bottom: 4px solid transparent;
+
+  }
+  
+  .navbar .nav-link.link:hover {
+    border-top: 0.18em solid white;
+    border-bottom: 0.18em solid white;
+  }
+
+  .topnavbar .links .link.active {
+    background-color: rgb(100, 185, 255);
+  }
+  
+  .navbar .dropdown-item.active,
+  .navbar .dropdown-item:active {
+    background-color: rgb(100, 185, 255);
+    color: white;
+  }
