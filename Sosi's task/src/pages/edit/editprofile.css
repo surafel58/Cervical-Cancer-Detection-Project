@@ -1,0 +1,9 @@
+.editImage {
+  position: relative;
+  top: -140px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 10px solid rgb(67, 166, 255);
+}

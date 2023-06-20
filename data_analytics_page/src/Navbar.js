@@ -15,7 +15,7 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark topnavbar">
       <div className="container-fluid">
-        <h1>CCSS</h1>
+        <h1>DeepPap</h1>
 
         <button
           className="navbar-toggler"
