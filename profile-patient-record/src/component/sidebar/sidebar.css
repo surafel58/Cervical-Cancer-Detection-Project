@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.sideBar {
+  position: absolute;
+  top: 54px;
+  width: 250px;
+  height: 100vh;
+  background-color: white;
+  left: 0;
+  z-index: 10;
+}
+.content {
+  background-color: white;
+  margin-top: 20px;
+  margin-left: 20px;
+  color: rgb(97, 97, 97);
+}
+.list {
+  background-color: white;
+  margin-left: 5px;
+}
+.iconlist {
+  font-size: medium;
+}

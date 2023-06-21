@@ -1,0 +1,52 @@
+.container {
+  margin-top: 100px;
+  
+}
+.image {
+  position: relative;
+  top:-90px;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 20px solid rgb(67, 166, 255);
+}
+.text {
+  position: relative;
+  top: -70px;
+  color: rgb(97, 97, 97);
+}
+.updateprofile {
+  
+  width: 200px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: rgb(67, 166, 255);
+  border: none;
+  padding: 10px 20px;
+  justify-content: center;
+  cursor: pointer;
+}
+.deleteAcc{
+  color:white;
+}
+.deleteprofile {
+ 
+  width: 200px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: rgb(67, 166, 255);
+  border: none;
+  padding: 10px 40px;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: 15px;
+}
+.link {
+  color: white;
+  background-color: rgb(67, 166, 255);
+}
+
+.list {
+  cursor: pointer;
+}

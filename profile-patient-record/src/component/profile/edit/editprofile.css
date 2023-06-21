@@ -1,0 +1,19 @@
+.editImage {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 10px solid rgb(67, 166, 255);
+}
+.formEdit {
+  width: 550px;
+  height: 350px;
+}
+.divBut {
+  display: flex;
+  justify-content: center;
+}
+.editDelete {
+  margin-left: 30px;
+}
