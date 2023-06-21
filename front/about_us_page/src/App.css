@@ -1,0 +1,50 @@
+.about-us-container {
+  background-color: #fff;
+  border: 0.125em solid #ccc;
+  border-radius: 0.5em;
+  box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.2);
+  padding: 2.5em;
+  margin: 2.5em auto;
+  max-width: 50em;
+}
+
+.title {
+  background-color: #f8f9fa;
+  padding: 2.5em;
+  text-align: center;
+  margin-bottom: 2.5em;
+  border-radius: 0.5em;
+}
+
+.container {
+  margin-bottom: 2.5em;
+}
+
+h1.about_us_h1 {
+  font-size: 2.25em;
+  font-weight: bold;
+  margin-bottom: 1.25em;
+}
+
+.mission_container, .vision_container, .value_container, .team_container {
+  margin-bottom: 1.875em;
+}
+
+.mission_container h2, .vision_container h2, .value_container h2, .team_container h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 0.625em;
+}
+
+.value_container ul {
+  padding-left: 1.25em;
+}
+
+.value_container ul li {
+  margin-bottom: 0.625em;
+}
+
+.value_container .icon {
+  margin-right: 0.5em;
+}
+

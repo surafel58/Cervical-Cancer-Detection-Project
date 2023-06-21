@@ -1,0 +1,16 @@
+.input-group{
+  position : relative;
+  left : 700px;
+  margin-bottom: 40px;
+
+}
+.dot{
+  margin-left: 30px;
+}
+.div{
+  margin-left: 900px;
+  margin-top: 40px;
+}
+.span{
+  margin-left: 30px;
+}
