@@ -1,69 +1,50 @@
 .about-us-container {
   background-color: #fff;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  padding: 40px;
-  margin: 40px auto;
-  max-width: 800px;
+  border: 0.125em solid #ccc;
+  border-radius: 0.5em;
+  box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.2);
+  padding: 2.5em;
+  margin: 2.5em auto;
+  max-width: 50em;
 }
 
-.jumbotron {
+.title {
   background-color: #f8f9fa;
-  padding: 40px;
+  padding: 2.5em;
   text-align: center;
-  margin-bottom: 40px;
-  border-radius: 8px;
+  margin-bottom: 2.5em;
+  border-radius: 0.5em;
 }
 
 .container {
-  margin-bottom: 40px;
+  margin-bottom: 2.5em;
 }
 
-h1.display-4 {
-  font-size: 36px;
+h1.about_us_h1 {
+  font-size: 2.25em;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 1.25em;
 }
 
-.col-md-6 {
-  margin-bottom: 30px;
+.mission_container, .vision_container, .value_container, .team_container {
+  margin-bottom: 1.875em;
 }
 
-h2 {
-  font-size: 24px;
+.mission_container h2, .vision_container h2, .value_container h2, .team_container h2 {
+  font-size: 1.5em;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 0.625em;
 }
 
-ul {
-  padding-left: 20px;
+.value_container ul {
+  padding-left: 1.25em;
 }
 
-ul li {
-  margin-bottom: 10px;
+.value_container ul li {
+  margin-bottom: 0.625em;
 }
 
-.icon {
-  margin-right: 8px;
+.value_container .icon {
+  margin-right: 0.5em;
 }
 
-.team-list {
-  list-style-type: none;
-}
-
-.team-list li {
-  padding-left: 20px;
-  position: relative;
-}
-
-.team-list li:before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 8px;
-  width: 10px;
-  height: 10px;
-  background-color: #007bff;
-  border-radius: 50%;
-}
