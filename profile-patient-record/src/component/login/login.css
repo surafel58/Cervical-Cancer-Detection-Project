@@ -24,3 +24,31 @@
   top: 20px;
   cursor: pointer;
 }
+
+.passwordInputContainer {
+  position: relative;
+}
+
+.input[type='password'] {
+  padding-right: 40px; /* Add space for the eye icon */
+}
+
+.passwordToggle {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.passwordToggleIcon {
+  color: #999;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.passwordToggleIcon:hover {
+  color: #333;
+}

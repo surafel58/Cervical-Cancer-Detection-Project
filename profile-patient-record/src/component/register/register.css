@@ -107,10 +107,47 @@
   margin-left: 100px;
 }
 .buttom {
-  margin-top: 8px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
 }
 .buttom-header {
-  margin-left: 50px;
+  /* margin-left: 50px; */
   color: rgb(67, 166, 255);
   cursor: pointer;
+}
+
+.successMessage {
+  color: green;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.passwordInputContainer {
+  position: relative;
+}
+
+.input[type='password'] {
+  padding-right: 40px; /* Add space for the eye icon */
+}
+
+.passwordToggle {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.passwordToggleIcon {
+  color: #999;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.passwordToggleIcon:hover {
+  color: #333;
 }

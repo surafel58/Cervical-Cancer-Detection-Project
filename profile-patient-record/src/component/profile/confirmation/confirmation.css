@@ -1,4 +1,4 @@
-.popup {
+/* .popup {
   position: fixed;
   top: 300px;
   margin-left: -200px;
@@ -55,5 +55,70 @@
   margin-top: 8px;
 }
 .deletelink {
+  background-color: lightgray;
+} */
+
+
+.popup {
+  position: fixed;
+  top: 300px;
+  margin-left: -200px;
+  width: 35%;
+  height: 10vh;
+  background-color: lightgrey;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+}
+.popup-inner {
+  position: relative;
+  padding: 32px;
+  width: 100%;
+  max-width: 640px;
+  background-color: lightgray;
+}
+.infoIcon{
+  background-color: lightgray ;
+  border : 10px solid rgb(67, 166, 255);
+  border-radius: 30px;
+  color: gray;
+  margin-right: 10px;
+  height: 20px;
+  width: 20px;
+}
+.txt{
+  background-color: lightgray;
+}
+.deletetxt {
+  background-color: lightgrey;
+  
+}
+.class {
+  background-color: lightgray;
+  margin-top: 18px;
+  height: 40px;
+
+}
+.close-btn {
+  background-color: lightgray;
+  margin-left: 100px;
+  border: 2px solid rgb(179, 176, 176);
+  width: 100px;
+  height: 30px;
+}
+.confirm-btn {
+  background-color: lightgray;
+  border: 4px solid rgb(67, 166, 255);
+  width: 100px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+  margin-top: 8px;
+}
+.deletelink{
   background-color: lightgray;
 }
