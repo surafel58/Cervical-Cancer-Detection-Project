@@ -1,0 +1,27 @@
+.top1{
+    background: rgb(67,166,255);
+    margin: 0;
+   /* background: linear-gradient(90deg, rgba(67,166,255,1) 72%, rgba(255,255,255,1) 100%);*/
+  }
+  .custom-shape-divider-bottom-1681320105 {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+  
+  .custom-shape-divider-bottom-1681320105 svg {
+    /* position: relative;
+    display: block; */
+    width: calc(166% + 1.3px);
+    height: 20em;
+  }
+  
+  .custom-shape-divider-bottom-1681320105 .shape-fill {
+    fill: #FFFFFF;
+  }  
+  
+  /*slider*/
+  
+ 
+  

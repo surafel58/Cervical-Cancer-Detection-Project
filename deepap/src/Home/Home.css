@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+* {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+  }
+/*down css's*/
+
+.down{
+  width: 100%;
+  min-height:auto;
+  display: flex;
+  flex-direction: column;
+  /* 
+  flex-direction: column; */
+  /* justify-content: space-around; */
+  /* flex-flow: wrap; */
+  /* padding:5%; */
+}
+
+/* the first box in the down home page */
+.box1{
+    /* box-shadow: 5px 5px 10px 2px rgb(67,166,255);  */
+    width: 100%;
+    /* border-radius: 1em; */
+    background-color: rgb(67,166,255);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* padding: 10%; */
+    /* height: 70%; */
+    /* margin-right: 10%; */
+    /* margin-left: 3%; */
+    /* border-radius: 1em;
+    background-color: rgb(67,166,255); */
+    /* background-color: rgba(67,166,255, 0.5);  */
+    /* opacity: 0.5;  */
+    /* margin-top: 1em; */
+}
+
+/* css for the image  in the first box  */
+.down .box1 img{
+  height: 25em;
+  width: 27em;
+  /* display: block; 
+   margin-left: 68%; 
+   margin-right: 0%; 
+   border-bottom-right-radius: 1em;
+  border-top-right-radius: 1em; */
+  opacity: 0.45;
+  float: left; 
+}
+
+.down .box1 button{
+  margin-left: 17.5em;
+  margin-top: 1.5em;
+}
+
+.down .box1 .para{
+  float: right;
+  position: relative;
+  width: 67%;
+}
+
+.down .box3 img{
+  height:25em;
+  width:27em;
+  opacity: 0.45;
+}
+
+/* .down .box1 button{
+  margin-left: 45em;
+  margin-right: 3%;
+  margin-bottom: 3%;
+  border-radius: 1em;
+  border-width: 0;
+  font-size:1em;
+  color:  rgb(67,166,255);
+  font-weight: bolder;
+} */
+
+.box2{
+  /* margin-left: 55%; */
+  /* box-shadow: 5px 5px 10px 2px rgb(67,166,255);  */
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* border-style: solid;
+  border-color: rgb(67,166,255); */
+  border-radius: 1em;
+  /* background-color: rgb(67,166,255); */
+  /* margin-top: 1.5em; */
+}
+
+.down .box2 img{
+  height: 25em;
+  width: 50%;
+  margin-left: 17em;
+  opacity: 0.6;
+  float: right;
+  position: relative;
+}
+
+/* .down .box2 .para{
+  float: left;
+  position: absolute;
+  width: 50%;
+} */
+ .down .box2 button{
+  margin-left: 17.5em;
+  margin-top: 1.5em;
+ }
+
+    /* CSS  for the button in home page */
+.button-48 {
+  appearance: none;
+  background-color: #FFFFFF;
+  border-width: 0;
+  border-radius: 0.5em;
+  box-shadow: 2px 2px 7px 2px rgba(15, 15, 15, 0.8);
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Clarkson,Helvetica,sans-serif;
+  font-size: 0.9em;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1em;
+  /* margin: 0; */
+
+  /* opacity: 1; */
+  outline: 0;
+  padding: 1.5em 2.2em;
+  position: relative;
+  /* text-align: center; */
+  /* text-decoration: none; */
+  text-rendering: geometricprecision;
+  text-transform: uppercase;
+
+  transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 100ms cubic-bezier(.694, 0, 0.335, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.button-48:before {
+  animation: opacityFallbackOut .5s step-end forwards;
+  backface-visibility: hidden;
+  background-color:  rgba(67,166,255,0.5);
+ 
+  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0);
+  transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+  width: 100%;
+}
+
+.button-48:hover:before {
+  animation: opacityFallbackIn 0s step-start forwards;
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+}
+
+.button-48:after {
+  background-color: #FFFFFF;
+}
+
+.button-48 span {
+  z-index: 1;
+  position: relative;
+}
+
+.box3{
+  width: 100%;
+  background-color:  rgb(67,166,255);;
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  /* margin-top: 1.5em; 
+  margin-left: 3%;} */
+}
+.down .box3 img{
+  height: 25em;
+  width: 27em;
+  /* display: block; 
+   margin-left: 68%; 
+   margin-right: 0%; 
+   border-bottom-right-radius: 1em;
+  border-top-right-radius: 1em; */
+  opacity: 0.45;
+  float: left; 
+}
+.down .box3 button{
+  margin-left: 17.5em;
+  margin-top: 1.5em;
+}
+.down .box3 .para{
+  float: right;
+  position: relative;
+  width: 67%;
+}
+.box4{
+  /* margin-left: 55%; */
+  /* box-shadow: 5px 5px 10px 2px rgb(67,166,255);  */
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 1em;
+
+  /* background-color: rgb(67,166,255); */
+  /* margin-top: 1.5em; */
+}
+.down .box4 img{
+  height: 25em;
+  width: 50%;
+  margin-left: 17em;
+  opacity: 0.6;
+  float: right;
+  position: relative;
+}
+.down .box4 button{
+  margin-left: 21.5em;
+  margin-top: 1.5em;
+}
+/* .down .box4 .para{
+  float: left;
+  /* position: absolute; */
+  /* width: 50%;
+} */ 
+/*button css in down.js*/
+
+/* .down button{
+  
+  margin-left: 84%;
+  margin-right: 3%; 
+  background-color: rgb(67,166,255);
+  border-width: 0;
+  border-radius: 1em;
+  font-size:1.2em;
+  color: white;
+} */
+/* .footer{
+  background: rgb(67,166,255);
+  height: 7em;
+  
+}
+.footer h3 {
+  text-align: left;
+  margin-left: 5em;
+  color: #FFFFFF;
+  font-size: large;
+}
+.footer .info h5{
+  color: #FFFFFF;
+  font-size: medium;
+  margin-left: 7em;
+  margin-top: 0.5em;
+  text-align: left;
+}
+
+ */
