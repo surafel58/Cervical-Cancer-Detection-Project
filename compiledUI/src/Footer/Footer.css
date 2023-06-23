@@ -1,0 +1,76 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+
+
+.footer {
+  background-color: #152238;
+  color:#eeeeee;
+  padding: 3.5rem;
+  height: 5em; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer .container {
+  margin-top: 2em;
+}
+.footer h4{
+  color:#eeeeee;
+}
+.footer p {
+  margin: 0;
+  font-size: 14px;
+  color:#eeeeee;
+}
+
+.footer .social-icons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  margin-top: 10px;
+}
+
+.footer .social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color:#eeeeee;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+
+.footer .social-icons a:last-child {
+  margin-right: 0;
+}
+
+.footer .footer .container a:hover {
+  background-color: #eeeeee;
+}
+
+.footer ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer li {
+  margin-right: 1rem;
+}
+
+.footer  li:last-child {
+  margin-right: 0;
+}
+
+.footer  li a {
+  color: #fff;
+  text-decoration: none;
+}
+

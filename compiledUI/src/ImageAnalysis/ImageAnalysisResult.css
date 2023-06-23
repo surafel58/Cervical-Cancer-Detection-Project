@@ -1,0 +1,14 @@
+.no-result-heading{
+  text-align: left;
+}
+
+.card-content{
+
+  display: flex;
+  flex-direction: column;
+}
+.resultimg{
+  width: 20em;
+  height: 20em;
+  margin-bottom: 3em;
+}
