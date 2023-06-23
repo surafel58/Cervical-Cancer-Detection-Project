@@ -1,0 +1,5 @@
+.image-analysis-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 10em;
+}

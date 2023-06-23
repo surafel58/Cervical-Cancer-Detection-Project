@@ -1,0 +1,32 @@
+.list{
+top : -170px;
+position: relative;
+} 
+.list-group {
+position: absolute;
+right: 18%;
+top: 100%;
+list-style: none;
+width: 6em;
+font-size: small;
+font-weight: medium;
+color: #333333;
+background-color: #ffffff;
+border: 1px solid #cccccc;
+border-radius: 4px;
+}
+
+.list-group-item {
+cursor: pointer;
+width: 100%;
+border-bottom: 1px solid #cccccc;
+}
+
+.list-group-item:hover{
+    background-color: #cccccc;
+}
+
+/* .list-group-item:last-child {
+border-bottom: none;
+background-color: #f0f0f0;
+} */

@@ -1,0 +1,45 @@
+.toast-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10em;
+  
+}
+
+.toast-buttons button {
+  margin-right: 10px;
+  padding: 5px 10px;
+  }
+.labelName{
+  margin-bottom: 1em;
+}
+.toastInput{
+  margin-bottom: 2em;
+  background-color: rgb(221, 220, 220);
+  border : none;
+  border-radius: 0.5em;
+  
+}
+.cancel_button{
+  margin-right: 4em;
+  border : none;
+  border-radius: 0.4em;
+  width : 5em;
+  
+}
+.cancel_button:hover {
+  background-color: rgba(67, 166, 255, 0.5);
+}
+.proceed_button{
+  border : none;
+  border-radius: 0.4em;
+  width : 5em;
+ }
+ .proceed_button:hover{
+ background-color: rgba(67, 166, 255, 0.5);
+ }
+ .toastP{
+  display : flex;
+  justify-content: center;
+  margin-top : -2em;
+ }
+
