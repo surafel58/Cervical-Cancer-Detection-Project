@@ -31,7 +31,7 @@ const Navbar = () => {
                 exact
                 to='/'
                 className='nav-link link'
-                activeClassName='active'
+                activeclassname='active'
               >
                 Home
               </NavLink>
@@ -40,7 +40,7 @@ const Navbar = () => {
               <NavLink
                 to='/analysis'
                 className='nav-link link'
-                activeClassName='active'
+                activeclassname='active'
               >
                 Image Analysis
               </NavLink>
@@ -49,7 +49,7 @@ const Navbar = () => {
               <NavLink
                 to='/records'
                 className='nav-link link'
-                activeClassName='active'
+                activeclassname='active'
               >
                 Patient Records
               </NavLink>
@@ -58,7 +58,7 @@ const Navbar = () => {
               <NavLink
                 to='/analytics'
                 className='nav-link link'
-                activeClassName='active'
+                activeclassname='active'
               >
                 Data Analytics
               </NavLink>
@@ -67,7 +67,7 @@ const Navbar = () => {
               <NavLink
                 to='/about'
                 className='nav-link link'
-                activeClassName='active'
+                activeclassname='active'
               >
                 About Us
               </NavLink>
@@ -92,7 +92,7 @@ const Navbar = () => {
                   <NavLink
                     to='/signin'
                     className='dropdown-item'
-                    activeClassName='selected'
+                    activeclassname='selected'
                   >
                     Sign In
                   </NavLink>
@@ -101,7 +101,7 @@ const Navbar = () => {
                   <NavLink
                     to='/signup'
                     className='dropdown-item'
-                    activeClassName='selected'
+                    activeclassname='selected'
                   >
                     Sign Up
                   </NavLink>
@@ -110,7 +110,7 @@ const Navbar = () => {
                   <NavLink
                     to='/editprofile'
                     className='dropdown-item'
-                    activeClassName='selected'
+                    activeclassname='selected'
                   >
                     Edit Profile
                   </NavLink>
@@ -119,7 +119,7 @@ const Navbar = () => {
                   <NavLink
                     to='/logout'
                     className='dropdown-item'
-                    activeClassName='selected'
+                    activeclassname='selected'
                   >
                     Log Out
                   </NavLink>

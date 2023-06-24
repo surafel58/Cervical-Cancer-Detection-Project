@@ -4,10 +4,11 @@ import { FaCheckCircle , FaUsers } from 'react-icons/fa';
 
 const AboutUs = () => {
   return (
+    <div className='contain'>
     <div className="about-us-container">
       <div className="about_title">
         <h1 className="about_us_h1">About Us</h1>
-        <p className="pg">We are DeepPap, a leading provider of AI-based healthcare systems.</p>
+        <p className="pg">We are DeepPap, a provider of AI-based healthcare systems.</p>
       </div>
 
       <div className="container">
@@ -40,6 +41,7 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

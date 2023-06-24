@@ -24,11 +24,11 @@ function List(props) {
   return props.trigger ? (
     <>
       <div className='list relative' ref={listRef}>
-        <ul class="list-group">
-            <li class="list-group-item">Edit</li>
-            <li class="list-group-item">Delete</li>
-            <li class="list-group-item" onClick={()=>navigate('/patientdetail')}>Details</li>
-            <li class="list-group-item" onClick={() => props.setTrigger(false)}>Cancel</li>
+        <ul className="list-group">
+            <li className="list-group-item">Edit</li>
+            <li className="list-group-item">Delete</li>
+            <li className="list-group-item" onClick={()=>navigate('/patientdetail')}>Details</li>
+            <li className="list-group-item" onClick={() => props.setTrigger(false)}>Cancel</li>
         </ul>
 
         {props.children}

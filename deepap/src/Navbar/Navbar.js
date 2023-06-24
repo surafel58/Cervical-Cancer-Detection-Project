@@ -32,27 +32,27 @@ const Navbar = () => {
         >
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <NavLink exact to="/" className="nav-link link" activeClassName="active">
+              <NavLink exact to="/" className="nav-link link" activeclassname="active">
                 Home
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/patientinformation" className="nav-link link" activeClassName="active">
+              <NavLink to="/patientinformation" className="nav-link link" activeclassname="active">
                 Image Analysis
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/patientrecord" className="nav-link link" activeClassName="active">
+              <NavLink to="/patientrecord" className="nav-link link" activeclassname="active">
                 Patient Records
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/analytics" className="nav-link link" activeClassName="active">
+              <NavLink to="/analytics" className="nav-link link" activeclassname="active">
                 Data Analytics
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/about" className="nav-link link" activeClassName="active">
+              <NavLink to="/about" className="nav-link link" activeclassname="active">
                 About Us
               </NavLink>
             </li>
@@ -71,16 +71,16 @@ const Navbar = () => {
               </a>
               <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
                 <li>
-                  <NavLink to="/signin" className="dropdown-item" activeClassName="selected">Sign In</NavLink>
+                  <NavLink to="/signin" className="dropdown-item" activeclassname="selected">Sign In</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/signup" className="dropdown-item" activeClassName="selected">Sign Up</NavLink>
+                  <NavLink to="/signup" className="dropdown-item" activeclassname="selected">Sign Up</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/editprofile" className="dropdown-item" activeClassName="selected">Edit Profile</NavLink>
+                  <NavLink to="/editprofile" className="dropdown-item" activeclassname="selected">Edit Profile</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/logout" className="dropdown-item" activeClassName="selected">Log Out</NavLink>
+                  <NavLink to="/logout" className="dropdown-item" activeclassname="selected">Log Out</NavLink>
                 </li>
               </ul>
             </li>

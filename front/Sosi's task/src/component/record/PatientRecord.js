@@ -22,18 +22,18 @@ function PatientRecord() {
   return (
     <>
       <div className=' p-4 w-full h-screen bg-slate-100'>
-        <div class='input-group  bg-slate-100 '>
-          <div class='form-outline'>
+        <div className='input-group  bg-slate-100 '>
+          <div className='form-outline'>
             <input
               type='search'
               id='form1'
-              class='form-control hover:border-blue-400 hover:border-4  w-100'
+              className='form-control hover:border-blue-400 hover:border-4  w-100'
               placeholder='Serach by Name'
             />
           </div>
           <button
             type='button'
-            class='btn border bg-blue-400 hover:bg-blue-500'
+            className='btn border bg-blue-400 hover:bg-blue-500'
           >
             <SearchIcon />
           </button>
@@ -67,11 +67,11 @@ function PatientRecord() {
           <List trigger={patientPopup} setTrigger={setPatientPopup}></List>
         </div>
         <div className='div bg-slate-100'>
-          <a class='prev inline-flex items-center px-4 py-2 text-sm font-medium cursor-pointer text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'>
+          <a className='prev inline-flex items-center px-4 py-2 text-sm font-medium cursor-pointer text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'>
             Previous
           </a>
 
-          <a class='next inline-flex items-center px-4 py-2 ml-3 text-sm font-medium cursor-pointer text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-blue- hover:text-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'>
+          <a className='next inline-flex items-center px-4 py-2 ml-3 text-sm font-medium cursor-pointer text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-blue- hover:text-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'>
             Next
           </a>
         </div>

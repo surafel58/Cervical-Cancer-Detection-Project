@@ -43,7 +43,7 @@ const PatientRecord = () => {
 
 
   return (
-    <>
+    <div className='patientcontainer'>
       <div className='p-4'>
         <div className='input-group'>
           <div className='form-outline'>
@@ -57,16 +57,16 @@ const PatientRecord = () => {
             />
           </div>
           
-          <span class="material-symbols-outlined">
+          <span className="material-symbols-outlined">
             search
             </span>
           
         </div>
 
           {/* NEW TABLE */}
-            <table class="table mt-5">
+            <table className="table mt-5">
             
-            <thead class="thead-dark">
+            <thead className="thead-dark">
                 <tr>
                 {column.map((c, i) => (
                   <th key={i}>{c}</th>
@@ -94,11 +94,11 @@ const PatientRecord = () => {
           <List trigger={patientPopup} setTrigger={setPatientPopup} />
         </div>
         <div className='next-page'>
-          <a className='prev'><button type="button" class="btn btn-primary">&lt;Previous</button></a>
-          <a className='next ml-3'><button type="button" class="btn btn-primary">Next &gt;</button></a>
+          <a className='prev'><button type="button" className="btn btn-primary">&lt;Previous</button></a>
+          <a className='next ml-3'><button type="button" className="btn btn-primary">Next &gt;</button></a>
         </div>
       {/* </div> */}
-    </>
+    </div>
   );
 }
 

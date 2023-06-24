@@ -22,7 +22,7 @@ const ImageAnalysisResult = ({ result, dataURI }) => {
             <img  className="resultimg" src= '../../public/HSIL_10(17).jpg' alt={`Cervical Image - ${result["Date"]}`} />
           {/* </a> */}
       
-          <div className="result-info">
+          <div className="a-result-info">
             <p><b>Cancer Classification:</b> {result["Cancer Classification"]}</p>
             <p><b>Cells Condition:</b> {result["Cells Condition"]}</p>
             <p><b>Cellular Change:</b> {result["Cellular Change"]}</p>
@@ -39,7 +39,7 @@ const ImageAnalysisResult = ({ result, dataURI }) => {
             <a href="https://via.placeholder.com/150" target="_blank" rel="noopener noreferrer">
               <img src= 'https://via.placeholder.com/150' alt = "Cervical Image" />
             </a>
-            <div className="result-info">
+            <div className="a-result-info">
                 <h5 className="no-result-heading">No analysis result available.</h5>
             </div>
           </div>
