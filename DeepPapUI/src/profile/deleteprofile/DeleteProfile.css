@@ -1,0 +1,67 @@
+
+.containsdelete{
+ 
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 4em;
+}
+.delete-container{
+        width: 32em;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        box-shadow: 0 0 0.5em gray;
+        margin-left: 25em;
+        margin-right: 20em;
+        margin-top: 2em;
+        border-radius: 1em;
+}
+
+
+
+
+  .formContainer {
+    margin: 1.6em;
+  }
+  
+.formEdit .formContainer .formInput {
+    margin-bottom: 1em;
+  }
+  
+  .formEdit .formContainer .formInput .label {
+    font-weight: bold;
+  }
+  
+  .formEdit .formContainer .formInput .input {
+    width: 100%;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 0.5em;
+  }
+  
+.deleteBtn {
+    display: flex;
+    justify-content: center;
+   } 
+  
+ .verifybtn{
+    padding: 0.5em 1.5em;
+    background-color: #4285f4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .containsdelete .error{
+    color: red;
+    font-size: 0.8em;
+    /* margin-left: 1.5em; */
+    margin: 0;
+    /* padding: 2px 0; */
+  }
+  /* Additional styling can be added as per your requirement */
+  

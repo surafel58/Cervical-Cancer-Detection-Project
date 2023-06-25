@@ -1,0 +1,75 @@
+ /* CSS styles for the page */
+ @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Dancing+Script&family=Montserrat+Alternates&family=Roboto&display=swap');
+
+  .patientdetail h1 {
+    text-align: center;
+    margin-top: 3.5rem;
+  }
+
+  .patientdetail h2 {
+    margin-left: 1.25em;
+    margin-top: 2.19em;
+    text-align: center;
+  }
+
+  .tableContainer {
+    margin: 1.25em;
+    margin-bottom: 6.25em;
+  }
+  .screening-results-container{
+     background-color: rgb(245, 245, 245);
+     height: 100vh;
+     overflow: auto;
+     padding: 1em;
+    /* margin-right: 3em; */
+    /* margin-left: 3em; */
+    margin : 0 3em 3em 3em;
+  }
+  
+ .screening-results-container .card-content img {
+    width: 9.38em;
+    height: auto;
+    /* margin-right: 1.25em; */
+    /* margin-top: 1em; */
+    object-fit: cover;
+    border-radius: 5px 5px 5px 5px;
+  }
+
+  .result-info {
+    min-width: 15em;
+    max-width: 15em;
+  }
+
+  .result-info p {
+    margin: 5px 0;
+  }
+
+  .card-content {
+    padding: 1.25em;
+    display: flex;
+    column-gap: 3.125em;
+    align-items: center;
+    position: relative; /* Set the card content as a relative positioned container */
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 1em;
+  } 
+
+  .delete-button {
+    color: grey;
+    cursor: pointer;
+    position: absolute;
+    top: 0.63me;
+    right: 0.63em;
+    cursor: pointer;
+    z-index: 1; /* Ensure the delete icon is above the card content */
+  }
+ 
+  .screening-results-container {
+    margin-top: 1.25em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.8em;
+  }
