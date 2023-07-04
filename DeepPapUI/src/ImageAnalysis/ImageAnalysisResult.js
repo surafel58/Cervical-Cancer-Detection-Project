@@ -8,7 +8,7 @@ const ImageAnalysisResult = ({ result, dataURI }) => {
       {result ? (
         <div className="card-content">
            <h2 className="no-result-heading">Result</h2>
-            <img  className="resultimg" src= '../../public/HSIL_10(17).jpg' alt={`Cervical Image - ${result["Date"]}`} />
+            <img  className="resultimg" src= {`${dataURI}`} alt={`Cervical Image - ${result["Date"]}`} />
       
           <div className="a-result-info">
             <p><b>Cancer Classification:</b> {result["Cancer Classification"]}</p>

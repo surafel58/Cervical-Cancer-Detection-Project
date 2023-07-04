@@ -2,6 +2,9 @@ import './patientrecord.css';
 import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.css'
 import List from './list/list';
+import auth from '../config/firebase-config';
+import LoadingIcon from '../LoadingIcon/LoadingIcon';
+import { ToastContainer, toast } from 'react-toastify';
 
 const PatientRecord = () => {
   const [column, setColumn] = useState([]);
@@ -9,14 +12,43 @@ const PatientRecord = () => {
   const [patientPopup, setPatientPopup] = useState(false);
   const [filterRecords , setFilteredRecords]=useState([]);
   const [searchValue, setSearchValue] = useState('');
+  const [url, setURL] = useState(``);
+  const [data, setData] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [currentPatientId, setCurrentPatientId] = useState(null);
+
+  // auth.onAuthStateChanged((user) => {
+  //   if(user)
+  //     setURL(`http://localhost:4000/api/patient-records?uid=${auth.currentUser.uid}`);
+    
+  //     else
+  //       setURL('');
+
+  // })
 
   useEffect(() => {
-    fetch('http://localhost:3000/Data.json')
+    if(auth.currentUser){
+     
+      setIsLoading(true);
+
+      fetch(`http://localhost:4000/api/patient-records?uid=${auth.currentUser.uid}`)
       .then((res) => res.json())
       .then((data) => {
-        setColumn(Object.keys(data.users[0]));
-        setRecords(data.users);
-      });
+        
+        setIsLoading(false);
+        setData(data);
+        
+        setColumn(Object.keys(data.data[0]));
+        setRecords(data.data);
+        console.log(data.data)
+
+      })
+      .catch((err) => {
+        setIsLoading(false);
+        toast.error(err.message);
+      })
+    }
+    
   }, []);
 
   //
@@ -43,6 +75,10 @@ const PatientRecord = () => {
 
 
   return (
+    
+    <>
+    <LoadingIcon color={"rgb(67, 166, 255)"} visible={isLoading} height={"80"} width={"80"} radius={1}/>  
+    <ToastContainer/>  
     <div className='patientcontainer'>
       <div className='p-4'>
         <div className='input-group'>
@@ -76,12 +112,16 @@ const PatientRecord = () => {
             <tbody>
             {filterRecords.map((record, i) => (
                 <tr key={i}>
-                  <td>{record.Id}</td>
-                  <td>{record.Name}</td>
-                  <td>{record.Age}</td>
-                  <td>{record.Address}</td>
-                  <td>{record.Phone}
-                  <span className='dot' onClick={() => setPatientPopup(true)}>
+                  <td>{record.address}</td>
+                  <td>{record.phoneNumber}</td>
+                  <td>{record.patientId}</td>
+                  <td>{record.fullName}</td>
+                  <td>{record.age}</td>
+                  <td>{record.real_patient_id}</td>
+                  <td><span className='dot' onClick={(e) => {
+                    setCurrentPatientId(record.real_patient_id);
+                    setPatientPopup(true);
+                  }}>
                     <span className='material-symbols-outlined'>more_vert</span>
                   </span>
                   </td>
@@ -91,13 +131,14 @@ const PatientRecord = () => {
             </tbody>
             </table>
 
-          <List trigger={patientPopup} setTrigger={setPatientPopup} />
+          <List trigger={patientPopup} setTrigger={setPatientPopup} data={data} setData={setData} currentPatientId = {currentPatientId} isLoading={isLoading} setIsLoading={setIsLoading} />
         </div>
         <div className='next-page'>
           <a className='prev'><button type="button" className="btn btn-primary">&lt;Previous</button></a>
           <a className='next ml-3'><button type="button" className="btn btn-primary">Next &gt;</button></a>
         </div>
     </div>
+    </>
   );
 }
 

@@ -4,7 +4,6 @@ const cors = require("cors");
 const errHandler = require("./errorHandlers/errorHandler")
 const notFound = require("./errorHandlers/notFound");
 
-
 const app = express(); // Initialize express app
 
 app.use(cors());

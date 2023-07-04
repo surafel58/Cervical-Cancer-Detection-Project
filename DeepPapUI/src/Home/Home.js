@@ -2,11 +2,14 @@ import React from 'react';
 import './Home.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useNavigate } from 'react-router-dom';
 
 
 const Home = () => {
   
   AOS.init();
+
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -41,7 +44,7 @@ const Home = () => {
               Detect cervical cancer and pre-cancerous cells easily using our Pap smear microscopic image-based screening test.
             </h2>
 
-            <button type="button" className="btn btn-outline-primary">Take screening test</button>
+            <button type="button" className="btn btn-outline-primary" onClick={ (e) =>  navigate("/patientinformation") }>Take screening test</button>
 
           </div>
 
@@ -63,7 +66,7 @@ const Home = () => {
               Simplify all the hassel of managing patient records with our user-friendly system for organizing and managing patient records that took screening tests. 
             </h2>
 
-            <button type="button" className="btn btn-outline-primary btn-fill">Manage records</button>
+            <button type="button" className="btn btn-outline-primary btn-fill" onClick={ (e) =>  navigate("/patientrecord") }>Manage records</button>
 
           </div>
 
@@ -85,7 +88,7 @@ const Home = () => {
             Effortlessly analyze and interpret complex data and easily extract insightful information using our data visualization tool.
             </h2>
 
-            <button type="button" className="btn btn-outline-primary">View analytics</button>
+            <button type="button" className="btn btn-outline-primary" onClick={ (e) =>  navigate("/analytics") }>View analytics</button>
 
           </div>
           <div className='down-arrow-container'>

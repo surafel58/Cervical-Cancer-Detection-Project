@@ -1,12 +1,8 @@
 .no-result-heading{
-  text-align: left;
+  text-align: center;
 }
 
-.card-content{
 
-  display: flex;
-  flex-direction: column;
-}
 .resultimg{
   width: 20em;
   height: 20em;
@@ -16,5 +12,11 @@
 .a-result-info{
     min-width: 15em;
     max-width: 30em;
-    width: 24em;
+    width: 28em;
+}
+
+.result-container .card-content
+{
+  display: flex;
+  flex-direction: column;
 }

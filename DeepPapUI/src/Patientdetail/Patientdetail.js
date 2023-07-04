@@ -98,14 +98,15 @@ const PatientInformation = () => {
         </div>
   
         <h2>Cervical Cancer Screening Results</h2>
-  
+
+        <div className='screening-results-container-wrapper'>
         {/* Screening results container */}
         <div className="screening-results-container">
           {patient.screeningResults.map((result, index) => (
             // Screening result card
             <div className="card-content">
               <a href="https://via.placeholder.com/150" target="_blank" rel="noopener noreferrer">
-                <img src="https://via.placeholder.com/150" alt={`Cervical Image - ${result.date}`} />
+                <img src="https://via.placeholder.com/150" alt={`Cervical Image - ${result.date}`}/>
               </a>
               <div className="result-info">
                 <p><b>Date:</b> {result.date}</p>
@@ -121,6 +122,7 @@ const PatientInformation = () => {
             </div>
           ))}
         </div>
+      </div>
       </div>
     );
   };

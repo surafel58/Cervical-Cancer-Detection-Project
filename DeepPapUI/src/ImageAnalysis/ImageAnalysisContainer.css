@@ -1,8 +1,48 @@
 .image-analysis-container{
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content:center;
+    /* padding: 5em;
+    column-gap: 3em; */
+    /* margin-top: 5em; */
+}
+
+.image-analysis-content{
+    display: flex;
+    justify-content:center;
+    /* align-items: center; */
     padding: 5em;
     column-gap: 3em;
-    margin-top: 5em;
 }
+
+.save-print-container{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.save-print-container .btn{
+    padding: 1em 2em 1em 2em;
+}
+
+/* Crop printed area */
+@media print {
+    @page {
+      size: 8.5in 11in; /* Set the desired paper size */
+      margin: 0in; /* Set the desired margins */
+    }
+
+    .save-print-container{
+        display: none;
+    }
+
+    .image-upload-container .upload-button{
+        display: none;
+    }
+
+    .image-analysis-content{
+
+        flex-direction: column;
+    }
+  }

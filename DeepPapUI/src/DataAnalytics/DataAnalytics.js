@@ -1,9 +1,11 @@
-import {React} from 'react';
+import {React, useEffect, useState} from 'react';
 import { BarChart, Bar, PieChart, Pie, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Cell} from 'recharts';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 
 import './DataAnalytics.css';
+import { toast } from 'react-toastify';
+import LoadingIcon from '../LoadingIcon/LoadingIcon';
 
 //function to get current date and formatted to dd-mm-yy
 const getCurrentDate = () => {
@@ -49,36 +51,152 @@ const DataAnalytics = () => {
     { Year: 2023, totalCases: 2000, positiveCases: 800, negativeCases: 1200, ageGroup: '64+', cellCondition: 'Cancerous', cancerClassification: 'Squamous cell carcinoma' }
   ];
 
-  //pie chart color for total negative and total positive cases 
-  const negative_positive_data = [
-    { name: 'Positive', value: 150 },
-    { name: 'Negative', value: 350 },
-  ];
-  
   const COLORS = ['#FF8042', '#0088FE']; // Specify colors for each segment
-
-// Get data for Cell condition pie chart
-  const cellConditionData = [
-    { name: 'Normal', value: data.filter(item => item.cellCondition === 'Normal').length },
-    { name: 'Cancerous', value: data.filter(item => item.cellCondition === 'Cancerous').length },
-    { name: 'Precancerous', value: data.filter(item => item.cellCondition === 'Precancerous').length },
-  ];
 
   const COLORS_cell_condition = ['#47B0AA', '#48B2DE', '#E57872']; // Specify colors for each segment
 
+  const [result, setResult ] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [lineChartData, setLineChartData] = useState(null);
+  const [pieChartPositiveNegative, setPieChartPositiveNegative] = useState(null);
+  const [ageDistributionData, setAgeDistributionData] = useState(null);
+  const [cancer_Classification_Data, setCancerClassificationData] = useState(null);
+  const [cell_condition_data, setCellConditionData] = useState(null);
+  
+  const fillChartData = (result) => {
+    
+    const total_test = result.total_test;
+    const positive_negative_test = result.test_group;
+    // const age_distribution_data_group = result.
+    const cancer_classification = result.cancer_classification;
+    const cell_condition = result.cell_condition;
 
 
-  // Get data for Cancer classification pie chart
-  const cancerClassificationData = [
-    { name: 'Squamous cell carcinoma', value: data.filter(item => item.cancerClassification === 'Squamous cell carcinoma').length },
-    { name: 'High squamous intra-epithelial lesion', value: data.filter(item => item.cancerClassification === 'High squamous intra-epithelial lesion').length },
-    { name: 'Negative for Intraepithelial malignancy', value: data.filter(item => item.cancerClassification === 'Negative for Intraepithelial malignancy').length },
-    { name: 'Low squamous intra-epithelial lesion', value: data.filter(item => item.cancerClassification === 'Low squamous intra-epithelial lesion').length },
-  ];
+    const line_chart_data = [];
+    const pie_chart_data_p_n = [];
+    // const age_distribution_data = [];
+    
+    const cancer_classification_data = [];
+    const cell_condition_data = [];
+
+    for(let key in total_test){
+
+        line_chart_data.push({
+            Year : Number(key),
+            totalCases : total_test[key]
+        });
+
+    }
+
+    setLineChartData(line_chart_data);
+
+    
+    pie_chart_data_p_n.push({
+            name : 'Positive',
+            value : positive_negative_test.total_positive
+     
+    });
+
+    pie_chart_data_p_n.push({
+        name : 'Negative',
+        value : positive_negative_test.total_negative
+ 
+    });
+
+    setPieChartPositiveNegative(pie_chart_data_p_n);
+
+
+    cancer_classification_data.push({
+
+        name : 'High squamous intra-epithelial lesion',
+        value: cancer_classification.HSIL
+    });
+
+    
+    cancer_classification_data.push({
+
+        name : 'Squamous cell carcinoma',
+        value: cancer_classification.SCC
+    })
+
+    cancer_classification_data.push({
+
+        name : 'Negative for Intraepithelial malignancy',
+        value: cancer_classification.NIM
+    })
+    
+    cancer_classification_data.push({
+        
+        name : 'Low squamous intra-epithelial lesion',
+        value: cancer_classification.LSIL
+    })
+    
+    setCancerClassificationData(cancer_classification_data);
+    
+    cell_condition_data.push({
+        name: 'Normal',
+        value: cell_condition.normal
+    })
+
+    
+    cell_condition_data.push({
+        name: 'Pre-cancerous',
+        value: cell_condition.precancerous
+    })
+
+    cell_condition_data.push({
+        name: 'Cancerous',
+        value: cell_condition.cancerous
+    });
+
+    setCellConditionData(cell_condition_data);
+
+
+
+
+
+}
+    
+    
+
+
+  useEffect(() => {
+
+    setIsLoading(true);
+    try {
+        const response = fetch("http://localhost:5000/api/data-analytics", {
+        method : "GET"})
+
+        .then((response) => {
+
+            if(response.ok){
+
+                response.json().then(result => {
+                    setResult(result);
+                    setIsLoading(false);
+
+                    fillChartData(result);
+                })
+            }
+            else{
+                toast.error(result);
+                setIsLoading(false)
+            }
+        })
+
+    }
+    catch (error) {
+        setIsLoading(false);
+        toast.error(error.message);
+    }
+
+  }, []);
+
 
   return (
-    <div id='dataAnalytics_container'>
-        <header>
+      <div id='dataAnalytics_container'>
+        <LoadingIcon color={"rgb(67, 166, 255)"} visible={isLoading} height={"80"} width={"80"} radius={1}/>    
+        { result && (<><header>
             <h1>Data Analytics Dashboard</h1>
         </header>
         
@@ -86,7 +204,7 @@ const DataAnalytics = () => {
             <div className="chart-item">
                 <h2 className="chart-title">Total Cervical Cancer Cases</h2>
                 <div className='chart_g'>
-                    <LineChart width={600} height={400} data={data}>
+                    <LineChart width={600} height={400} data={lineChartData}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="Year" />
                     <YAxis />
@@ -102,7 +220,7 @@ const DataAnalytics = () => {
             <div className='chart_g'>
             <PieChart width={400} height={300}>
             <Pie
-                data={negative_positive_data}
+                data={pieChartPositiveNegative}
                 cx={200} // Center x-coordinate of the pie chart
                 cy={150} // Center y-coordinate of the pie chart
                 innerRadius={60} // Inner radius of the pie chart (creates a donut chart effect)
@@ -159,14 +277,14 @@ const DataAnalytics = () => {
                 dataKey="value"
                 startAngle={180}
                 endAngle={0}
-                data={cellConditionData}
+                data={cell_condition_data}
                 cx="50%"
                 cy="50%"
                 outerRadius={150}
                 fill="#E57872"
                 label
             >
-                {cellConditionData.map((entry, index) => (
+                {cell_condition_data.map((entry, index) => (
                 <Cell key={index} fill={COLORS_cell_condition[index % COLORS_cell_condition.length]} />
                 ))}
             </Pie>
@@ -180,8 +298,8 @@ const DataAnalytics = () => {
             <h2 className="chart-title">Cancer Classification Distribution</h2>
             <div className='chart_g'>
                 <PieChart width={400} height={400}>
-                <Pie dataKey="value" nameKey="name" data={cancerClassificationData} cx="50%" cy="50%" outerRadius={120} fill="#8884d8">
-                    {cancerClassificationData.map((entry, index) => (
+                <Pie dataKey="value" nameKey="name" data={cancer_Classification_Data} cx="50%" cy="50%" outerRadius={120} fill="#8884d8">
+                    {cancer_Classification_Data.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={`#${index * 599}`} />
                     ))}
                 </Pie>
@@ -195,7 +313,9 @@ const DataAnalytics = () => {
         {/* button to export report */}
         <div className="export-report">
             <button onClick={exportReport}>Export Report</button>
-        </div>
+        </div></>)}
+
+        { !result && (<div style={{ width: "100vh", height: "100vh", backgroundColor: "transparent"}}></div>)}
     </div>
   );
 }

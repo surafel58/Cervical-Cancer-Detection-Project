@@ -4,6 +4,6 @@ const { isAuthenticated } = require("../controllers/authController");
 
 const router = Router()
 
-router.get("/get-analysis", isAuthenticated, get_analysis);
+router.get("/", get_analysis);
 
 module.exports = router

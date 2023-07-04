@@ -11,18 +11,18 @@ const {
 
  const { create_screening_result, delete_screening_result } = require("../controllers/screeningResultController");
 
-const { isAuthenticated } = require("../controllers/authController");
+// const { isAuthenticated } = require("../controllers/authController");
 
 const router = Router()
 
-router.get("/", isAuthenticated, get_all_patients);
-router.post("/", isAuthenticated, create_patient);
+router.get("/", get_all_patients);
+router.post("/", create_patient);
 
-router.get("/:patientid", isAuthenticated, get_single_patient);
-router.patch("/:patientid", isAuthenticated, update_patient);
-router.delete("/:patientid", isAuthenticated, delete_patient);
+router.get("/:patientid", get_single_patient);
+router.patch("/:patientid", update_patient);
+router.delete("/:patientid", delete_patient);
 
-router.post("/:patientid/screening-results", isAuthenticated, create_screening_result);
-router.delete("/:patientid/screening-results/:resultid", isAuthenticated, delete_screening_result);
+router.post("/:patientid/screening-results", create_screening_result);
+router.delete("/:patientid/screening-results/:resultid", delete_screening_result);
 
 module.exports = router

@@ -19,7 +19,8 @@ const get_all_screening_results = async (path) => {
 const create_screening_result = async (req, res, next) => {
     
     try {
-        const results_ref = db.collection(`users/${req.authId}/patient_records/${req.params.patientid}/screeningResults`);
+        const uid = req.query.uid;
+        const results_ref = db.collection(`users/${uid}/patient_records/${req.params.patientid}/screeningResults`);
         const new_result = req.body;
         
         new_result.createdAt = firestore.FieldValue.serverTimestamp();
@@ -38,12 +39,13 @@ const delete_screening_result = async(req, res, next) => {
     
     try
     {
-        const result_ref = db.collection(`users/${req.authId}/patient_records/${req.params.patientid}/screeningResults/${req.params.resultid}`)
+        const uid = req.query.uid;
+        const result_ref = db.collection(`users/${uid}/patient_records/${req.params.patientid}/screeningResults/${req.params.resultid}`)
         const result_snapshot = result_ref.doc(patient_id)
         const deleted_result= await result_snapshot.get()
 
         if (deleted_result.empty){
-            return res.status(400).json({msg : "Screening result doesn't exist!"})
+            return res.status(400).json({message : "Screening result doesn't exist!"})
         }
         
         await result_snapshot.delete()

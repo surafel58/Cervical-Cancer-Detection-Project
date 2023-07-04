@@ -5,16 +5,12 @@
     gap: 2em;
     }
     
-    .upload-button {
-    background-color: rgb(67,166,255);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
+    .image-upload-container .upload-button {
+      padding: 1em 2em 1em 2em;
     }
     
     .upload-button:hover {
-    background-color:  rgb(67,180,255);
+        background-color:  rgb(67, 166, 255);
     }
     
     .upload-modal {
@@ -61,27 +57,24 @@
     
     
     .file-input {
-    display: block;
-    margin: 10px auto;
+        display: block;
+        margin: 10px auto;
     }
     
     .preview-image {
-    max-width: 100%;
-    max-height: 200px;
-    object-fit: contain;
-    margin: 20px 0;
+        max-width: 100%;
+        max-height: 200px;
+        object-fit: contain;
+        margin: 20px 0;
     }
     
-    .perform-analysis-button {
-    background-color: rgb(67,166,255);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin-top: 10px;
+    .upload-modal-content .perform-analysis-button {
+        padding: 1em 2em 1em 2em;
+        margin-top: 1.5em;
     }
     
     .perform-analysis-button:hover {
-    background-color: rgb(67,180,255);
+        background-color: rgb(67,180,255); 
     }
+    
     

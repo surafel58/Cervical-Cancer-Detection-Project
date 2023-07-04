@@ -1,6 +1,6 @@
 const get_total_test = (patient_records) => {
 
-    let total_test = {};
+    let total_test = {0 : 0};
 
     patient_records.forEach(record => {
 
@@ -22,33 +22,25 @@ const get_total_test = (patient_records) => {
 
 const get_test_group = (patient_records) => {
 
-    let total_positive = {};
-    let total_negative = {};
+    let total_positive = 0;
+    let total_negative = 0;
 
-    // patient_records.forEach(record => {
+    patient_records.forEach(record => {
         
-    //     record.screeningResults.forEach((result) => 
-    //     {
-    //         if (result.resultDescription["Cancer Classification"] == 'Squamous cell carcinoma'){
-                
-    //             if(!total_positive[record.age])
-    //                 total_positive[record.age] = 1
-    //             else
-    //                 total_positive[record.age] += 1
-    //         }
-    //         else{
+        if(record.screeningResults){
+            record.screeningResults.forEach((result) => 
+            {
+                if (result.resultDescription["Cancer Classification"] == 'Squamous cell carcinoma'){
+                    total_positive += 1
+                }
+                else{
+                    total_negative += 1
+                }
+            
+            })
+        }
 
-    //             if(!total_negative[record.age])
-    //                 total_negative[record.age] = 1
-    //             else
-    //                 total_negative[record.age] += 1
-    //         }
-        
-    //     })
-
-    // });
-
-    total_negative = get_total_test(patient_records) - total_positive;
+    });
 
     return { total_positive, total_negative }
 }
@@ -56,14 +48,13 @@ const get_test_group = (patient_records) => {
 
 const get_age_group = (patient_records) => {
 
-    let age_group = [];
-    let positive_age_group = {};
-    let negative_age_group = {};
+    let positive_age_group = { 0 : 0 };
+    let negative_age_group = { 0 : 0 };
     
     patient_records.forEach((record) => {
 
-        age_group.push(record.age);
-
+        if(record.screeningResults){
+            
         for (let i = 0; i < record.screeningResults.length; i++) {
             
             // find age group having positive cases
@@ -84,6 +75,7 @@ const get_age_group = (patient_records) => {
                 }
             }
         }
+        }
     });
 
     return { positive_age_group, negative_age_group };
@@ -95,25 +87,29 @@ const get_cancer_classification  = (patient_records) => {
 
     patient_records.forEach((record) => {
 
-        for (let i = 0; i < record.screeningResults.length; i++) {
+            if(record.screeningResults){
 
-            const classification = record.screeningResults[i].resultDescription["Cancer Classification"];
-
-            if(classification == 'High squamous intra-epithelial lesion'){
-                HSIL += 1
-            } 
-            else if(classification == 'Low squamous intra-epithelial lesion'){
-                LSIL += 1
+                for (let i = 0; i < record.screeningResults.length; i++) {
+    
+                const classification = record.screeningResults[i].resultDescription["Cancer Classification"];
+    
+                if(classification.toLowerCase() == 'high squamous intra-epithelial lesion'){
+                    HSIL += 1
+                } 
+                else if(classification.toLowerCase() == 'low squamous intra-epithelial lesion'){
+                    LSIL += 1
+                }
+                else if(classification.toLowerCase() == 'squamous cell carcinoma'){
+                    SCC += 1
+                }
+                else{
+                    NIM += 1
+                }
+    
+                }
             }
-            else if(classification == 'Squamous cell carcinoma'){
-                SCC += 1
-            }
-            else{
-                NIM += 1
-            }
-
-        }
-    });
+            
+        });
 
     return { HSIL, LSIL, SCC, NIM };
 }
@@ -122,24 +118,32 @@ const get_cell_conditions = (patient_records) => {
 
     let normal = 0, precancerous = 0, cancerous = 0;
 
-    patient_records.forEach((record) => {
+    console.log("get cel condiont", patient_records.screeningResults)
 
-        for (let i = 0; i < record.screeningResults.length; i++) {
+            patient_records.forEach((record) => {
+                
+                if(record.screeningResults){
+                
+                    for (let i = 0; i < record.screeningResults.length; i++) {
+        
+                    const condition = record.screeningResults[i].resultDescription['Cells Condition'];
 
-            const condition = record.screeningResults[i].resultDescription['Cells condition'];
-
-            if(condition == 'Normal'){
-                normal += 1
-            } 
-            else if(condition == 'Pre-cancerous'){
-                precancerous += 1
-            }
-            else{
-                cancerous += 1
-            }
-
-        }
-    });
+                    console.log(condition)
+        
+                    if(condition == 'Normal'){
+                        normal += 1
+                    } 
+                    else if(condition == 'Pre-cancerous'){
+                        precancerous += 1
+                    }
+                    else{
+                        cancerous += 1
+                    }
+        
+                    }
+                }
+            });
+        
 
     return {  normal, precancerous, cancerous };
 }

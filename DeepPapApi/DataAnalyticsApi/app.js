@@ -2,8 +2,11 @@ const express = require("express");
 const analytics_routes = require("./routes/analyticsRoutes");
 const errHandler = require("./errorHandlers/errorHandler");
 const notFound = require("./errorHandlers/notFound");
+const cors = require('cors')
 
 const app = express(); // Initialize express app
+
+app.use(cors());
 
 require('dotenv').config(); // load custom enviroment variables
 

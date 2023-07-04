@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import './ImageUpload.css';
 
-const ImageUpload = ({ onImageUpload, setdataURI , dataURI, setIsLoading, isLoading, isModalOpen, setIsModalOpen}) => {
+const ImageUpload = ({ onImageUpload, setdataURI , dataURI, setIsLoading, isLoading, isModalOpen, setIsModalOpen, setAnalysisResult}) => {
 
   const [selectedImage, setSelectedImage] = useState(null);
   const [previewImage, setPreviewImage] = useState(null);  
 
   const openModal = () => {
+    setPreviewImage(null);
+    setAnalysisResult(null);
     setIsModalOpen(true);
   };
 
@@ -26,9 +28,7 @@ const ImageUpload = ({ onImageUpload, setdataURI , dataURI, setIsLoading, isLoad
 
     reader.onload = () => {
       setPreviewImage(reader.result);
-      setdataURI(reader.result);
-      console.log(dataURI);
-      
+      setdataURI(reader.result);      
     };
 
     reader.readAsDataURL(file);
@@ -62,7 +62,7 @@ const ImageUpload = ({ onImageUpload, setdataURI , dataURI, setIsLoading, isLoad
       <div className="image-upload-container">
 
       <h1 className='title'>Pap Smear Test Analysis</h1>
-      <button onClick={openModal} className="upload-button">
+      <button onClick={openModal} className="btn btn-outline-primary upload-button" title='upload a pap smear microscopic image'>
       Upload Image
       </button>
 
@@ -86,7 +86,7 @@ const ImageUpload = ({ onImageUpload, setdataURI , dataURI, setIsLoading, isLoad
             accept="image/*"
             className="file-input"
           />
-          <button onClick={handleAnalysis} className="perform-analysis-button">
+          <button onClick={handleAnalysis} className="perform-analysis-button btn btn-outline-primary">
             Perform Analysis
           </button>
         </div>
